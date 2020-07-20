@@ -16,8 +16,8 @@ class PreferencesWindow: NSWindowController, NSWindowDelegate {
     var delegate: PreferencesWindowDelegate?
     @IBOutlet weak var cityTextField: NSTextField!
 
-    override var windowNibName : String! {
-        return "PreferencesWindow"
+    override var windowNibName : NSNib.Name? {
+        return NSNib.Name("PreferencesWindow")
     }
     
     override func windowDidLoad() {

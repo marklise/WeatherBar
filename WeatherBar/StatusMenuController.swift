@@ -17,12 +17,12 @@ class StatusMenuController: NSObject, PreferencesWindowDelegate {
     var weatherMenuItem: NSMenuItem!
     var preferencesWindow: PreferencesWindow!
 
-    let statusItem = NSStatusBar.system().statusItem(withLength: NSVariableStatusItemLength)
+    let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     let weatherAPI = WeatherAPI()
     
     override func awakeFromNib() {
         statusItem.menu = statusMenu
-        let icon = NSImage(named: "statusIcon")
+        let icon = NSImage(named: NSImage.Name(rawValue: "statusIcon"))
         icon?.isTemplate = true // best for dark mode
         statusItem.image = icon
         statusItem.menu = statusMenu
@@ -51,7 +51,7 @@ class StatusMenuController: NSObject, PreferencesWindowDelegate {
     }
     
     @IBAction func quitClicked(_ sender: NSMenuItem) {
-        NSApplication.shared().terminate(self)
+        NSApplication.shared.terminate(self)
     }
     
     func preferencesDidUpdate() {

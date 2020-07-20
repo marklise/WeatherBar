@@ -18,7 +18,7 @@ class WeatherView: NSView {
         DispatchQueue.main.async {
             self.cityTextField.stringValue = weather.city
             self.currentConditionsTextField.stringValue = "\(Int(weather.currentTemp))°F and \(weather.conditions)"
-            self.imageView.image = NSImage(named: weather.icon)
+            self.imageView.image = NSImage(named: NSImage.Name(rawValue: weather.icon))
         }
     }
 }
